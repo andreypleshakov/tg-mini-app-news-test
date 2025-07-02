@@ -17,6 +17,7 @@ yarn-error.log*
 # Environment files
 .env
 **/.env
+.env.prod
 
 # Editor and OS junk
 .vscode/

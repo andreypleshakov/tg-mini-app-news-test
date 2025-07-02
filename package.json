@@ -9,9 +9,9 @@
   "scripts": {
     "dev": "concurrently \"npm run start-backend\" \"npm run start-frontend\"",
     "start-backend": "ts-node apps/backend/server.ts",
-    "start-frontend": "cd apps/frontend && npm run dev",
+    "start-frontend": "cd apps/frontend && vite",
     "start-bot": "ts-node backend/bot.ts",
-    "build": "npm run build-frontend",
+    "build": "cd apps/frontend && cross-env NODE_ENV=production vite build",
     "build-frontend": "cd frontend && npm run build",
     "start": "node backend/dist/server.js",
     "setup-cert": "bash scripts/setup-cert.sh"
