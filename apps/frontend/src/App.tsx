@@ -13,6 +13,8 @@ export type NewsItem = {
   createdAt: string;
 };
 
+const apiBase = import.meta.env.VITE_API_BASE_URL;
+
 function App() {
   const [news, setNews] = useState<NewsItem | null>(null);
   const [loading, setLoading] = useState(true);
@@ -21,7 +23,7 @@ function App() {
     const tg = window.Telegram.WebApp;
     tg.ready();
 
-    fetch("http://localhost:3000/news")
+    fetch(`${apiBase}/news`)
       .then((res) => res.json())
       .then((data) => {
         setNews(data);
